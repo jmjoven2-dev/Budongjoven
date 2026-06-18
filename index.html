@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Information Form</h1>
+
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Age:</label>
+    <input type="number" id="age">
+
+    <label>Grade Level:</label>
+    <input type="text" id="grade">
+
+    <label>Section:</label>
+    <input type="text" id="section">
+
+    <button onclick="showProfile()">Submit</button>
+
+    <h3>Current Date and Time</h3>
+    <p id="datetime"></p>
+
+    <div class="profile-card" id="profile">
+        <h2>Student Profile Card</h2>
+
+        <p><strong>Name:</strong> <span id="pname">-</span></p>
+        <p><strong>Age:</strong> <span id="page">-</span></p>
+        <p><strong>Grade:</strong> <span id="pgrade">-</span></p>
+        <p><strong>Section:</strong> <span id="psection">-</span></p>
+    </div>
+</div>
+
+<script>
+
+function showProfile() {
+
+    document.body.style.backgroundColor =
+    "#" + Math.floor(Math.random()*16777215).toString(16);
+
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let grade = document.getElementById("grade").value;
+    let section = document.getElementById("section").value;
+
+    document.getElementById("pname").innerHTML = name;
+    document.getElementById("page").innerHTML = age;
+    document.getElementById("pgrade").innerHTML = grade;
+    document.getElementById("psection").innerHTML = section;
+
+    let now = new Date();
+    document.getElementById("datetime").innerHTML =
+    now.toLocaleString();
+
+    document.getElementById("profile").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
+boss atan
+body{
+    font-family: Arial, sans-serif;
+    background:#1d2951;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+    transition:0.5s;
+}
+
+.container{
+    width:420px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#1d2951;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    text-align:center;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+input{
+    width:80%;
+    padding:8px;
+    margin:5px auto;
+    display:block;
+    border:1px solid #ccc;
+    border-radius:5px;
+    
+}
+
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    background:#1d2951;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#304b8d;
+}
+
+#datetime{
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+.profile-card{
+    display:none;
+    margin-top:20px;
+    padding:20px;
+    border:2px solid #bdbdbd;
+    border-radius:12px;
+    background:#f8f9fa;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+
+.profile-card h2{
+    color:#1d2951;
+    margin-bottom:15px;
+}
+
+.profile-card p{
+    font-size:18px;
+    margin:8px 0;
+}
